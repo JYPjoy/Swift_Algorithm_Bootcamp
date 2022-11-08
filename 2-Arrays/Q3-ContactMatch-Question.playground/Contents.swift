@@ -17,8 +17,21 @@ import Foundation
  */
 
 public func solution(_ A : [String], _ B : [String], _ P : String) -> String {
-    // do your work here
-    return ""
+    var dictArray: [String: String] = [:]
+    for index in 0 ..< A.count {
+        dictArray[A[index]] = B[index]
+    }
+    
+    let matches = dictArray.filter{$0.value.contains(P)}
+    
+    
+    if matches.count == 0 {
+        return "NO CONTACT"
+    } else if matches.count == 1 {
+        return matches.first!.key
+    }
+    
+    return matches.keys.sorted().first!
 }
 
 let A = ["pim", "pom"]
@@ -35,6 +48,7 @@ solution(A, B, "")
 
 public func solutionDict(_ A : [String], _ B : [String], _ P : String) -> String {
     // 🕹 Game on here
+    
     return ""
 }
 
