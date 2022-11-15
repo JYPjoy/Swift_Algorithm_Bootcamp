@@ -10,6 +10,23 @@ class Node {
     }
 }
 
+let node3 = Node(3) //Tail node
+let node2 = Node(2, node3)
+let node1 = Node(1, node2) //Head node
+
+func printLinkedListSimple(_ head: Node?) {
+    if head == nil {return}
+    var node = head
+    print(node!.data)
+    
+    while node?.next != nil {
+        print(node!.next!.data)
+        node = node?.next
+    }
+}
+
+printLinkedListSimple(node1)
+
 class LinkList {
     private var head: Node?
         
